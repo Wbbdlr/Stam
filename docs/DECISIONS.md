@@ -14,8 +14,8 @@ Settled decisions. Append new ones; don't reopen without Sven.
 - **Languages:** English, Hebrew and Yiddish, user-selectable.
 - **Sofer referral:** deferred.
 - **Repo:** private GitHub repo `Wbbdlr/stam`.
+- **Order:** analysis first, tested in alpha builds of the app installed on our own iPhones and Androids. Must ship to the App Store and Google Play; users are not tech-savvy.
 
 ## Proposed, awaiting confirmation
 - Three-tier result wording (pasul / shailah / no visible problems found) — rav to approve.
 - Stack: Expo + ONNX Runtime; Python for analysis R&D (see PLAN.md).
-- Build the analysis prototype (P1) before the mobile app.

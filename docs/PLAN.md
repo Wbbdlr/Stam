@@ -34,18 +34,24 @@ capture → quality gate (focus, glare, resolution, full coverage) → flatten/d
 
 ## Proposed stack (pending Sven's OK)
 - **App:** Expo (React Native, TypeScript), react-native-vision-camera, onnxruntime-react-native, i18n with RTL. iOS builds through EAS Build, so a Mac isn't required.
+- **Capture:** the phone's built-in document scanner (iOS VisionKit, Android ML Kit) for edge detection, flattening and glare handling, with our own camera screen as fallback. Library and license to verify.
+- **Store pipeline:** EAS Build (signing) and EAS Submit (upload to App Store Connect and Play Console).
 - **Analysis R&D:** Python, OpenCV, PyTorch → ONNX.
 - **Web (later):** same Expo codebase via React Native Web, with onnxruntime-web.
 
 ## Phases
 - **P0 — Foundations (now):** repo and rules; compile `RULES.md` from published sources (Shulchan Aruch, Mishnah Berurah, Keses HaSofer, Mishnas Sofrim, OU/OK and sofer guides) for the rav's sign-off; choose the reference text; gather sample images (online plus own scans); define the labeling scheme.
-- **P1 — Analysis prototype (desktop, Python):** mezuzah only, Beis Yosef and Arizal. Text check, touching/broken letters, hiddur metrics. Measure against sofer-checked samples. **Gate:** missing/extra letter detection must reach the agreed accuracy before app work starts.
-- **P2 — Mobile MVP:** guided capture, on-device models, results screens, three languages.
+- **P1 — Analysis prototype + alpha app:** mezuzah only, Beis Yosef and Arizal. Text check, touching/broken letters, hiddur metrics, developed in Python and exported to the phone. A bare alpha app (capture → on-device analysis → raw results) runs on our own phones. Measure against sofer-checked samples. **Gate:** missing/extra letter detection must reach the agreed accuracy before public-facing work.
+- **P2 — Mobile MVP:** polished guided capture for non-technical users, results screens, three languages, store-ready.
 - **P3 — Expand:** all four ksav styles, megillah, Torah sections, tefillin parshiyos, letter-shape (shailah) model.
 - **P4 — Later:** sofer referral, donations and sponsorships, web version, app-store release.
 
+## Alpha distribution
+- **Android:** install test builds directly from a link (APK); later Play internal testing.
+- **iPhone:** no installing from the repo. Needs Apple Developer membership, then TestFlight or registered test devices.
+
 ## Open items
-- Apple Developer account in the LLC's name (needs a D-U-N-S number); Google Play developer account.
+- **D-U-N-S number for the LLC** (free, ~1–2 weeks before Apple enrollment) → Apple Developer Program as an organization → Google Play as an organization (new *personal* Play accounts must run a 12-tester, 14-day closed test before release).
 - Rav's sign-off process and result wording.
 - Licensing of images gathered online.
 - Accuracy targets for the P1 gate.
