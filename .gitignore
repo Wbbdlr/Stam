@@ -1,0 +1,30 @@
+# Data, images and model weights stay out of git
+analysis/data/
+analysis/runs/
+data/
+models/
+*.onnx
+*.pt
+*.pth
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / Expo
+node_modules/
+.expo/
+dist/
+web-build/
+ios/
+android/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+*.log
+.env
+.env.*
